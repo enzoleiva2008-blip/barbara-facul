@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Obra360 — Progresso da Obra</title>
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+
+  <body>
+    <!-- Página: obra.html (etapas + checklist) -->
+    <header class="header">
+      <div class="header__row">
+        <div class="brand">
+          <div class="brand__logo" aria-hidden="true">🏗️</div>
+          <div>
+            <h1 class="brand__title">Obra360</h1>
+            <p class="brand__subtitle">Progresso da obra por etapas</p>
+          </div>
+        </div>
+        <div class="chip" title="Exemplo de obra">Obra: Apto 203 • SP</div>
+      </div>
+    </header>
+
+    <main class="app">
+      <p class="section-title">Obra</p>
+
+      <div class="grid">
+        <section class="card col-12" aria-label="Etapas da obra">
+          <div class="card__header">
+            <div>
+              <h2 class="card__title">Etapas</h2>
+              <p class="card__meta">Cada etapa tem um progresso e um checklist (simulado)</p>
+            </div>
+            <span class="pill">📌 Atual: Revestimento</span>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="list">
+            <article class="card" style="padding: 12px" aria-label="Etapa: Demolição">
+              <div class="row">
+                <strong>🧱 Demolição</strong>
+                <span class="pill pill--ok">100%</span>
+              </div>
+              <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="margin-top: 10px">
+                <div class="progress__bar" data-percent="100"></div>
+              </div>
+              <ul class="checklist" aria-label="Checklist demolição">
+                <li>
+                  <input id="d1" type="checkbox" checked />
+                  <label for="d1">Remoção de revestimentos antigos</label>
+                </li>
+                <li>
+                  <input id="d2" type="checkbox" checked />
+                  <label for="d2">Retirada de entulho e limpeza</label>
+                </li>
+                <li>
+                  <input id="d3" type="checkbox" checked />
+                  <label for="d3">Vistoria do arquiteto</label>
+                </li>
+              </ul>
+            </article>
+
+            <article class="card" style="padding: 12px" aria-label="Etapa: Elétrica">
+              <div class="row">
+                <strong>💡 Elétrica</strong>
+                <span class="pill pill--ok">80%</span>
+              </div>
+              <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="margin-top: 10px">
+                <div class="progress__bar" data-percent="80"></div>
+              </div>
+              <ul class="checklist" aria-label="Checklist elétrica">
+                <li>
+                  <input id="e1" type="checkbox" checked />
+                  <label for="e1">Passagem de conduítes</label>
+                </li>
+                <li>
+                  <input id="e2" type="checkbox" checked />
+                  <label for="e2">Caixas e pontos (tomadas/luz)</label>
+                </li>
+                <li>
+                  <input id="e3" type="checkbox" />
+                  <label for="e3">Quadro de distribuição e testes</label>
+                </li>
+              </ul>
+            </article>
+
+            <article class="card" style="padding: 12px" aria-label="Etapa: Revestimento">
+              <div class="row">
+                <strong>🧱 Revestimento</strong>
+                <span class="pill pill--warn">60%</span>
+              </div>
+              <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="margin-top: 10px">
+                <div class="progress__bar" data-percent="60"></div>
+              </div>
+              <ul class="checklist" aria-label="Checklist revestimento">
+                <li>
+                  <input id="r1" type="checkbox" checked />
+                  <label for="r1">Nivelamento e preparação</label>
+                </li>
+                <li>
+                  <input id="r2" type="checkbox" />
+                  <label for="r2">Assentamento do piso (Sala)</label>
+                </li>
+                <li>
+                  <input id="r3" type="checkbox" />
+                  <label for="r3">Rejunte + limpeza final</label>
+                </li>
+              </ul>
+            </article>
+
+            <article class="card" style="padding: 12px" aria-label="Etapa: Acabamento">
+              <div class="row">
+                <strong>✨ Acabamento</strong>
+                <span class="pill">20%</span>
+              </div>
+              <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="margin-top: 10px">
+                <div class="progress__bar" data-percent="20"></div>
+              </div>
+              <ul class="checklist" aria-label="Checklist acabamento">
+                <li>
+                  <input id="a1" type="checkbox" />
+                  <label for="a1">Pintura final</label>
+                </li>
+                <li>
+                  <input id="a2" type="checkbox" />
+                  <label for="a2">Instalação de luminárias</label>
+                </li>
+                <li>
+                  <input id="a3" type="checkbox" />
+                  <label for="a3">Vistoria final + entrega</label>
+                </li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <footer class="footer col-12">
+          "A gente não está só reformando casas. A gente está transformando obra em produto."
+        </footer>
+      </div>
+    </main>
+
+    <nav class="nav" aria-label="Menu de navegação">
+      <div class="nav__inner">
+        <a href="index.html"><span class="icon" aria-hidden="true">📊</span><span>Dashboard</span></a>
+        <a href="obra.html"><span class="icon" aria-hidden="true">🏗️</span><span>Obra</span></a>
+        <a href="cronograma.html"><span class="icon" aria-hidden="true">📅</span><span>Cronograma</span></a>
+        <a href="profissionais.html"><span class="icon" aria-hidden="true">👷</span><span>Profissionais</span></a>
+        <a href="materiais.html"><span class="icon" aria-hidden="true">🧱</span><span>Materiais</span></a>
+        <a href="chat.html"><span class="icon" aria-hidden="true">💬</span><span>Chat</span></a>
+      </div>
+    </nav>
+
+    <script src="assets/app.js"></script>
+  </body>
+</html>
+

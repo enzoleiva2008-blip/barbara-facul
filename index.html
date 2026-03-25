@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Obra360 — Dashboard</title>
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+
+  <body>
+    <!--
+      Obra360 - Protótipo (Hackathon)
+      Página: Dashboard principal (index.html)
+      Observação: tudo aqui é simulado (sem backend).
+    -->
+
+    <header class="header">
+      <div class="header__row">
+        <div class="brand">
+          <div class="brand__logo" aria-hidden="true">🏠</div>
+          <div>
+            <h1 class="brand__title">Obra360</h1>
+            <p class="brand__subtitle">Gestão de obra com previsibilidade</p>
+          </div>
+        </div>
+        <div class="chip" title="Exemplo de obra">Obra: Apto 203 • SP</div>
+      </div>
+    </header>
+
+    <main class="app">
+      <p class="section-title">Dashboard</p>
+
+      <div class="grid">
+        <section class="card col-8" aria-label="Progresso geral da obra">
+          <div class="card__header">
+            <div>
+              <h2 class="card__title">Progresso da obra</h2>
+              <p class="card__meta">Etapa atual: <strong>Revestimento</strong></p>
+            </div>
+            <span class="pill pill--ok">✅ 62% concluída</span>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="row">
+            <div class="kpi">
+              <div class="kpi__value">62%</div>
+              <div class="kpi__label">% da obra concluída</div>
+            </div>
+            <div style="flex: 1">
+              <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress__bar" data-percent="62"></div>
+              </div>
+              <div class="row" style="margin-top: 8px">
+                <span class="muted">Próxima tarefa</span>
+                <strong>Assentar piso (Sala)</strong>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card col-4" aria-label="Resumo de prazo">
+          <div class="card__header">
+            <div>
+              <h2 class="card__title">Prazo</h2>
+              <p class="card__meta">Estimativa e próximos marcos</p>
+            </div>
+            <span class="pill pill--warn">⏳ 18 dias</span>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="list">
+            <div class="row">
+              <span class="muted">Dias restantes</span>
+              <strong>18</strong>
+            </div>
+            <div class="row">
+              <span class="muted">Próximo marco</span>
+              <strong>Entrega do piso</strong>
+            </div>
+            <div class="row">
+              <span class="muted">Data prevista</span>
+              <strong>04/04</strong>
+            </div>
+          </div>
+        </section>
+
+        <section class="card col-6" aria-label="Custo planejado vs atual">
+          <div class="card__header">
+            <div>
+              <h2 class="card__title">Custo (planejado vs atual)</h2>
+              <p class="card__meta">Valores simulados para controle</p>
+            </div>
+            <span class="pill pill--danger">💸 +8%</span>
+          </div>
+
+          <div class="divider"></div>
+
+          <table class="table" aria-label="Tabela de custos">
+            <thead>
+              <tr>
+                <th>Categoria</th>
+                <th>Planejado</th>
+                <th>Atual</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Mão de obra</td>
+                <td>R$ 22.000</td>
+                <td>R$ 23.800</td>
+              </tr>
+              <tr>
+                <td>Materiais</td>
+                <td>R$ 18.000</td>
+                <td>R$ 19.200</td>
+              </tr>
+              <tr>
+                <td>Fretes/Serviços</td>
+                <td>R$ 2.500</td>
+                <td>R$ 2.750</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="card col-6" aria-label="Alertas inteligentes">
+          <div class="card__header">
+            <div>
+              <h2 class="card__title">🔔 Alertas inteligentes</h2>
+              <p class="card__meta">Sugestões para reduzir risco de atraso e custo</p>
+            </div>
+            <span class="pill pill--warn">Prioridade alta</span>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="list">
+            <div class="card" style="padding: 12px">
+              <div class="row">
+                <strong>🚚 Atraso na entrega do piso</strong>
+                <span class="pill pill--danger">Risco</span>
+              </div>
+              <p class="card__meta" style="margin-bottom: 0">
+                Sugestão: trocar fornecedor ou antecipar compra (veja em Materiais).
+              </p>
+            </div>
+
+            <div class="card" style="padding: 12px">
+              <div class="row">
+                <strong>🧰 Equipe reduzida amanhã</strong>
+                <span class="pill pill--warn">Atenção</span>
+              </div>
+              <p class="card__meta" style="margin-bottom: 0">
+                Sugestão: reagendar tarefa pesada para evitar retrabalho.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="card col-12" aria-label="Modo Investidor">
+          <div class="card__header">
+            <div>
+              <h2 class="card__title">💡 Modo Investidor</h2>
+              <p class="card__meta">Simule o “objetivo do imóvel” para orientar decisões</p>
+            </div>
+            <span class="pill pill--ok">ROI (simulado)</span>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="grid">
+            <div class="card col-6" style="padding: 12px">
+              <div class="row">
+                <strong>🏖️ Airbnb moderno</strong>
+                <span class="pill pill--ok">Preferência</span>
+              </div>
+              <p class="card__meta" style="margin: 8px 0 0">
+                Foco: acabamento premium, iluminação aconchegante, fotos “instagramáveis”.
+              </p>
+            </div>
+
+            <div class="card col-6" style="padding: 12px">
+              <div class="row">
+                <strong>🏙️ Studio econômico</strong>
+                <span class="pill">Alternativa</span>
+              </div>
+              <p class="card__meta" style="margin: 8px 0 0">
+                Foco: custo controlado, alta durabilidade e manutenção simples.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <footer class="footer col-12">
+          "A gente não está só reformando casas. A gente está transformando obra em produto."
+        </footer>
+      </div>
+    </main>
+
+    <nav class="nav" aria-label="Menu de navegação">
+      <div class="nav__inner">
+        <a href="index.html">
+          <span class="icon" aria-hidden="true">📊</span>
+          <span>Dashboard</span>
+        </a>
+        <a href="obra.html">
+          <span class="icon" aria-hidden="true">🏗️</span>
+          <span>Obra</span>
+        </a>
+        <a href="cronograma.html">
+          <span class="icon" aria-hidden="true">📅</span>
+          <span>Cronograma</span>
+        </a>
+        <a href="profissionais.html">
+          <span class="icon" aria-hidden="true">👷</span>
+          <span>Profissionais</span>
+        </a>
+        <a href="materiais.html">
+          <span class="icon" aria-hidden="true">🧱</span>
+          <span>Materiais</span>
+        </a>
+        <a href="chat.html">
+          <span class="icon" aria-hidden="true">💬</span>
+          <span>Chat</span>
+        </a>
+      </div>
+    </nav>
+
+    <script src="assets/app.js"></script>
+  </body>
+</html>
+

@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Obra360 — Cronograma</title>
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+
+  <body>
+    <!-- Página: cronograma.html (timeline simulada) -->
+    <header class="header">
+      <div class="header__row">
+        <div class="brand">
+          <div class="brand__logo" aria-hidden="true">📅</div>
+          <div>
+            <h1 class="brand__title">Obra360</h1>
+            <p class="brand__subtitle">Cronograma e timeline</p>
+          </div>
+        </div>
+        <div class="chip">Dias restantes: <strong>18</strong></div>
+      </div>
+    </header>
+
+    <main class="app">
+      <p class="section-title">Cronograma</p>
+
+      <div class="grid">
+        <section class="card col-12" aria-label="Timeline da obra">
+          <div class="card__header">
+            <div>
+              <h2 class="card__title">Timeline (simulada)</h2>
+              <p class="card__meta">Barras representam o andamento de cada fase</p>
+            </div>
+            <span class="pill pill--warn">⏳ 18 dias</span>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="list">
+            <article class="card" style="padding: 12px">
+              <div class="row">
+                <strong>Demolição</strong>
+                <span class="pill pill--ok">Finalizado</span>
+              </div>
+              <p class="card__meta" style="margin: 8px 0 0">01/03 → 05/03</p>
+              <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="margin-top: 10px">
+                <div class="progress__bar" data-percent="100"></div>
+              </div>
+            </article>
+
+            <article class="card" style="padding: 12px">
+              <div class="row">
+                <strong>Elétrica</strong>
+                <span class="pill pill--ok">Em andamento</span>
+              </div>
+              <p class="card__meta" style="margin: 8px 0 0">06/03 → 18/03</p>
+              <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="margin-top: 10px">
+                <div class="progress__bar" data-percent="80"></div>
+              </div>
+            </article>
+
+            <article class="card" style="padding: 12px">
+              <div class="row">
+                <strong>Revestimento</strong>
+                <span class="pill pill--warn">Risco de atraso</span>
+              </div>
+              <p class="card__meta" style="margin: 8px 0 0">19/03 → 04/04</p>
+              <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="margin-top: 10px">
+                <div class="progress__bar" data-percent="60"></div>
+              </div>
+              <p class="card__meta" style="margin: 10px 0 0">
+                🔔 Alerta: entrega do piso pode atrasar. Sugestão: ver Materiais e trocar fornecedor.
+              </p>
+            </article>
+
+            <article class="card" style="padding: 12px">
+              <div class="row">
+                <strong>Acabamento</strong>
+                <span class="pill">A iniciar</span>
+              </div>
+              <p class="card__meta" style="margin: 8px 0 0">05/04 → 12/04</p>
+              <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="margin-top: 10px">
+                <div class="progress__bar" data-percent="20"></div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <footer class="footer col-12">
+          "A gente não está só reformando casas. A gente está transformando obra em produto."
+        </footer>
+      </div>
+    </main>
+
+    <nav class="nav" aria-label="Menu de navegação">
+      <div class="nav__inner">
+        <a href="index.html"><span class="icon" aria-hidden="true">📊</span><span>Dashboard</span></a>
+        <a href="obra.html"><span class="icon" aria-hidden="true">🏗️</span><span>Obra</span></a>
+        <a href="cronograma.html"><span class="icon" aria-hidden="true">📅</span><span>Cronograma</span></a>
+        <a href="profissionais.html"><span class="icon" aria-hidden="true">👷</span><span>Profissionais</span></a>
+        <a href="materiais.html"><span class="icon" aria-hidden="true">🧱</span><span>Materiais</span></a>
+        <a href="chat.html"><span class="icon" aria-hidden="true">💬</span><span>Chat</span></a>
+      </div>
+    </nav>
+
+    <script src="assets/app.js"></script>
+  </body>
+</html>
+

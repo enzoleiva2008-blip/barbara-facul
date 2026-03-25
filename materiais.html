@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Obra360 — Materiais e Compras</title>
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+
+  <body>
+    <!-- Página: materiais.html (lista + status + botão comprar) -->
+    <header class="header">
+      <div class="header__row">
+        <div class="brand">
+          <div class="brand__logo" aria-hidden="true">🧱</div>
+          <div>
+            <h1 class="brand__title">Obra360</h1>
+            <p class="brand__subtitle">Materiais e compras (simulado)</p>
+          </div>
+        </div>
+        <div class="chip">Orçamento: <strong>R$ 18.000</strong></div>
+      </div>
+    </header>
+
+    <main class="app">
+      <p class="section-title">Materiais</p>
+
+      <div class="grid">
+        <section class="card col-12" aria-label="Lista de materiais">
+          <div class="card__header">
+            <div>
+              <h2 class="card__title">Lista de compras</h2>
+              <p class="card__meta">Clique em “comprar” para simular o status</p>
+            </div>
+            <span class="pill pill--warn">⚠️ 2 pendentes</span>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="list">
+            <article class="card" style="padding: 12px" data-material>
+              <div class="row">
+                <strong>🧱 Piso (Sala/Quarto)</strong>
+                <span class="pill pill--warn" data-status>Pendente</span>
+              </div>
+              <p class="card__meta" style="margin: 8px 0 0">
+                Alerta: fornecedor com risco de atraso. Sugestão: comparar prazo e frete.
+              </p>
+              <div class="row" style="margin-top: 10px">
+                <span class="muted">Estimativa</span>
+                <strong>R$ 4.200</strong>
+              </div>
+              <div class="row" style="margin-top: 10px">
+                <button class="btn btn--primary" type="button" data-buy>Comprar</button>
+                <span class="muted">Entrega: 3–5 dias (simulado)</span>
+              </div>
+            </article>
+
+            <article class="card" style="padding: 12px" data-material>
+              <div class="row">
+                <strong>💡 Iluminação (spots + trilho)</strong>
+                <span class="pill pill--ok" data-status>Comprado</span>
+              </div>
+              <p class="card__meta" style="margin: 8px 0 0">Pedido confirmado e enviado.</p>
+              <div class="row" style="margin-top: 10px">
+                <span class="muted">Estimativa</span>
+                <strong>R$ 1.550</strong>
+              </div>
+              <div class="row" style="margin-top: 10px">
+                <button class="btn btn--ghost" type="button" disabled>Comprado ✓</button>
+                <span class="muted">Entrega: amanhã</span>
+              </div>
+            </article>
+
+            <article class="card" style="padding: 12px" data-material>
+              <div class="row">
+                <strong>⚡ Elétrica (fios, disjuntores)</strong>
+                <span class="pill pill--warn" data-status>Pendente</span>
+              </div>
+              <p class="card__meta" style="margin: 8px 0 0">Sugestão: comprar junto para reduzir frete.</p>
+              <div class="row" style="margin-top: 10px">
+                <span class="muted">Estimativa</span>
+                <strong>R$ 980</strong>
+              </div>
+              <div class="row" style="margin-top: 10px">
+                <button class="btn btn--primary" type="button" data-buy>Comprar</button>
+                <span class="muted">Entrega: 2 dias (simulado)</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <footer class="footer col-12">
+          "A gente não está só reformando casas. A gente está transformando obra em produto."
+        </footer>
+      </div>
+    </main>
+
+    <nav class="nav" aria-label="Menu de navegação">
+      <div class="nav__inner">
+        <a href="index.html"><span class="icon" aria-hidden="true">📊</span><span>Dashboard</span></a>
+        <a href="obra.html"><span class="icon" aria-hidden="true">🏗️</span><span>Obra</span></a>
+        <a href="cronograma.html"><span class="icon" aria-hidden="true">📅</span><span>Cronograma</span></a>
+        <a href="profissionais.html"><span class="icon" aria-hidden="true">👷</span><span>Profissionais</span></a>
+        <a href="materiais.html"><span class="icon" aria-hidden="true">🧱</span><span>Materiais</span></a>
+        <a href="chat.html"><span class="icon" aria-hidden="true">💬</span><span>Chat</span></a>
+      </div>
+    </nav>
+
+    <script src="assets/app.js"></script>
+  </body>
+</html>
+

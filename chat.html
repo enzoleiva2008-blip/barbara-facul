@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Obra360 — Chat</title>
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+
+  <body>
+    <!-- Página: chat.html (simulação de comunicação) -->
+    <header class="header">
+      <div class="header__row">
+        <div class="brand">
+          <div class="brand__logo" aria-hidden="true">💬</div>
+          <div>
+            <h1 class="brand__title">Obra360</h1>
+            <p class="brand__subtitle">Chat: cliente • arquiteto • equipe</p>
+          </div>
+        </div>
+        <div class="chip">Canal: <strong>Obra Apto 203</strong></div>
+      </div>
+    </header>
+
+    <main class="app">
+      <p class="section-title">Chat</p>
+
+      <div class="grid">
+        <section class="card col-12" aria-label="Mensagens do chat">
+          <div class="card__header">
+            <div>
+              <h2 class="card__title">Mensagens (simulado)</h2>
+              <p class="card__meta">Envie mensagens locais (não salva em servidor)</p>
+            </div>
+            <span class="pill">🟢 Online</span>
+          </div>
+
+          <div class="divider"></div>
+
+          <div id="chatList" class="chat" style="max-height: 360px; overflow: auto; padding-right: 4px">
+            <div class="bubble">
+              <strong>Arquiteto</strong>
+              <div style="margin-top: 6px">Pessoal, atenção: o piso pode atrasar. Temos plano B?</div>
+              <div class="bubble__meta">Hoje • 09:12</div>
+            </div>
+            <div class="bubble">
+              <strong>Equipe</strong>
+              <div style="margin-top: 6px">Se atrasar, conseguimos adiantar a elétrica e preparar a base.</div>
+              <div class="bubble__meta">Hoje • 09:18</div>
+            </div>
+            <div class="bubble bubble--me">
+              <strong>Você (Cliente)</strong>
+              <div style="margin-top: 6px">Ok! Vou olhar fornecedores e confirmo ainda hoje.</div>
+              <div class="bubble__meta">Hoje • 09:20</div>
+            </div>
+          </div>
+
+          <form id="chatForm" class="chat-input" aria-label="Enviar mensagem">
+            <select id="chatWho" class="input" style="max-width: 200px" aria-label="Quem está enviando">
+              <option value="cliente">Cliente</option>
+              <option value="arquiteto">Arquiteto</option>
+              <option value="equipe">Equipe</option>
+            </select>
+            <input
+              id="chatMessage"
+              class="input"
+              type="text"
+              placeholder="Digite sua mensagem..."
+              autocomplete="off"
+              aria-label="Mensagem"
+            />
+            <button class="btn btn--primary" type="submit">Enviar</button>
+          </form>
+        </section>
+
+        <footer class="footer col-12">
+          "A gente não está só reformando casas. A gente está transformando obra em produto."
+        </footer>
+      </div>
+    </main>
+
+    <nav class="nav" aria-label="Menu de navegação">
+      <div class="nav__inner">
+        <a href="index.html"><span class="icon" aria-hidden="true">📊</span><span>Dashboard</span></a>
+        <a href="obra.html"><span class="icon" aria-hidden="true">🏗️</span><span>Obra</span></a>
+        <a href="cronograma.html"><span class="icon" aria-hidden="true">📅</span><span>Cronograma</span></a>
+        <a href="profissionais.html"><span class="icon" aria-hidden="true">👷</span><span>Profissionais</span></a>
+        <a href="materiais.html"><span class="icon" aria-hidden="true">🧱</span><span>Materiais</span></a>
+        <a href="chat.html"><span class="icon" aria-hidden="true">💬</span><span>Chat</span></a>
+      </div>
+    </nav>
+
+    <script src="assets/app.js"></script>
+  </body>
+</html>
+
