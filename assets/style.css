@@ -394,6 +394,57 @@ body {
   box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.10);
 }
 
+/* Chat: perguntas com alternativas (radio) */
+.qna {
+  display: grid;
+  gap: 10px;
+}
+
+.qna__fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.qna__options {
+  display: grid;
+  gap: 8px;
+}
+
+.qna__option {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.qna__option:hover {
+  border-color: rgba(46, 125, 50, 0.35);
+  background: rgba(46, 125, 50, 0.04);
+}
+
+.qna__option input {
+  margin-top: 2px;
+  accent-color: var(--green);
+}
+
+.qna__option--disabled,
+.qna__fieldset[disabled] .qna__option {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.qna__replies {
+  display: grid;
+  gap: 10px;
+}
+
 /* Rodapé com a frase obrigatória */
 .footer {
   margin-top: 18px;

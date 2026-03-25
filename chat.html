@@ -8,14 +8,17 @@
   </head>
 
   <body>
-    <!-- Página: chat.html (simulação de comunicação) -->
+    <!--
+      Chat com perguntas de múltipla escolha:
+      ao marcar uma alternativa (radio), o sistema exibe a resposta automática.
+    -->
     <header class="header">
       <div class="header__row">
         <div class="brand">
           <div class="brand__logo" aria-hidden="true">💬</div>
           <div>
             <h1 class="brand__title">Obra360</h1>
-            <p class="brand__subtitle">Chat: cliente • arquiteto • equipe</p>
+            <p class="brand__subtitle">Chat assistido: perguntas e respostas automáticas</p>
           </div>
         </div>
         <div class="chip">Canal: <strong>Obra Apto 203</strong></div>
@@ -26,51 +29,113 @@
       <p class="section-title">Chat</p>
 
       <div class="grid">
-        <section class="card col-12" aria-label="Mensagens do chat">
+        <section class="card col-12" aria-label="Chat com alternativas">
           <div class="card__header">
             <div>
-              <h2 class="card__title">Mensagens (simulado)</h2>
-              <p class="card__meta">Envie mensagens locais (não salva em servidor)</p>
+              <h2 class="card__title">Assistente da obra</h2>
+              <p class="card__meta">
+                Escolha uma alternativa em cada pergunta — a resposta aparece automaticamente abaixo.
+              </p>
             </div>
             <span class="pill">🟢 Online</span>
           </div>
 
           <div class="divider"></div>
 
-          <div id="chatList" class="chat" style="max-height: 360px; overflow: auto; padding-right: 4px">
+          <div id="chatList" class="chat" style="max-height: none; overflow: visible; padding-right: 4px">
             <div class="bubble">
-              <strong>Arquiteto</strong>
-              <div style="margin-top: 6px">Pessoal, atenção: o piso pode atrasar. Temos plano B?</div>
-              <div class="bubble__meta">Hoje • 09:12</div>
+              <strong>Obra360</strong>
+              <div style="margin-top: 6px">
+                Olá! Sou o assistente desta obra. Responda às perguntas abaixo para receber orientações
+                instantâneas.
+              </div>
+              <div class="bubble__meta">Agora</div>
             </div>
-            <div class="bubble">
-              <strong>Equipe</strong>
-              <div style="margin-top: 6px">Se atrasar, conseguimos adiantar a elétrica e preparar a base.</div>
-              <div class="bubble__meta">Hoje • 09:18</div>
+
+            <!-- Pergunta 1: alternativas + resposta via JS -->
+            <div class="qna" data-qna>
+              <div class="bubble">
+                <strong>Arquiteto (via Obra360)</strong>
+                <div style="margin-top: 6px">O piso pode atrasar. O que você prefere fazer?</div>
+                <div class="bubble__meta">Pergunta 1 de 3</div>
+              </div>
+              <fieldset class="qna__fieldset" aria-label="Pergunta 1: piso">
+                <div class="qna__options">
+                  <label class="qna__option">
+                    <input type="radio" name="pergunta_piso" value="fornecedor" />
+                    <span>Trocar de fornecedor</span>
+                  </label>
+                  <label class="qna__option">
+                    <input type="radio" name="pergunta_piso" value="manter" />
+                    <span>Manter e ajustar o cronograma</span>
+                  </label>
+                  <label class="qna__option">
+                    <input type="radio" name="pergunta_piso" value="pausar" />
+                    <span>Pausar a etapa até chegar o material</span>
+                  </label>
+                </div>
+              </fieldset>
+              <!-- Respostas automáticas (preenchidas pelo JavaScript ao marcar uma opção) -->
+              <div class="qna__replies" hidden></div>
             </div>
-            <div class="bubble bubble--me">
-              <strong>Você (Cliente)</strong>
-              <div style="margin-top: 6px">Ok! Vou olhar fornecedores e confirmo ainda hoje.</div>
-              <div class="bubble__meta">Hoje • 09:20</div>
+
+            <!-- Pergunta 2 -->
+            <div class="qna" data-qna>
+              <div class="bubble">
+                <strong>Equipe (via Obra360)</strong>
+                <div style="margin-top: 6px">Precisamos definir prioridade para amanhã. Qual foco?</div>
+                <div class="bubble__meta">Pergunta 2 de 3</div>
+              </div>
+              <fieldset class="qna__fieldset" aria-label="Pergunta 2: prioridade">
+                <div class="qna__options">
+                  <label class="qna__option">
+                    <input type="radio" name="pergunta_prioridade" value="eletrica" />
+                    <span>Finalizar elétrica</span>
+                  </label>
+                  <label class="qna__option">
+                    <input type="radio" name="pergunta_prioridade" value="base" />
+                    <span>Preparar base para piso</span>
+                  </label>
+                  <label class="qna__option">
+                    <input type="radio" name="pergunta_prioridade" value="limpeza" />
+                    <span>Limpeza e organização do canteiro</span>
+                  </label>
+                </div>
+              </fieldset>
+              <div class="qna__replies" hidden></div>
+            </div>
+
+            <!-- Pergunta 3 -->
+            <div class="qna" data-qna>
+              <div class="bubble">
+                <strong>Cliente — dúvida rápida</strong>
+                <div style="margin-top: 6px">Como acompanhar o custo sem surpresas?</div>
+                <div class="bubble__meta">Pergunta 3 de 3</div>
+              </div>
+              <fieldset class="qna__fieldset" aria-label="Pergunta 3: custo">
+                <div class="qna__options">
+                  <label class="qna__option">
+                    <input type="radio" name="pergunta_custo" value="dashboard" />
+                    <span>Ver dashboard (planejado vs atual)</span>
+                  </label>
+                  <label class="qna__option">
+                    <input type="radio" name="pergunta_custo" value="alertas" />
+                    <span>Ativar alertas de materiais e prazo</span>
+                  </label>
+                  <label class="qna__option">
+                    <input type="radio" name="pergunta_custo" value="reuniao" />
+                    <span>Reunião semanal com o arquiteto</span>
+                  </label>
+                </div>
+              </fieldset>
+              <div class="qna__replies" hidden></div>
             </div>
           </div>
 
-          <form id="chatForm" class="chat-input" aria-label="Enviar mensagem">
-            <select id="chatWho" class="input" style="max-width: 200px" aria-label="Quem está enviando">
-              <option value="cliente">Cliente</option>
-              <option value="arquiteto">Arquiteto</option>
-              <option value="equipe">Equipe</option>
-            </select>
-            <input
-              id="chatMessage"
-              class="input"
-              type="text"
-              placeholder="Digite sua mensagem..."
-              autocomplete="off"
-              aria-label="Mensagem"
-            />
-            <button class="btn btn--primary" type="submit">Enviar</button>
-          </form>
+          <p class="card__meta" style="margin-top: 14px; margin-bottom: 0">
+            Dica: cada pergunta só pode ser respondida uma vez nesta simulação (as opções ficam bloqueadas após a
+            escolha).
+          </p>
         </section>
 
         <footer class="footer col-12">
@@ -93,4 +158,3 @@
     <script src="assets/app.js"></script>
   </body>
 </html>
-

@@ -5,7 +5,7 @@
   Funcionalidades:
   - Ajustar barras de progresso usando data-percent
   - Botão "comprar" em materiais (muda status)
-  - Envio de mensagem no chat (apenas no front)
+  - Chat (chat.html): perguntas com alternativas (radio) + resposta automática
 */
 
 // Utilitário: seleciona 1 elemento (atalho para estudantes)
@@ -66,52 +66,116 @@ function initMaterialsBuyButtons() {
   });
 }
 
-function initChat() {
-  // Em chat.html: envia mensagem local (sem servidor)
-  var form = $("#chatForm");
-  var input = $("#chatMessage");
+/**
+ * Respostas automáticas por pergunta e valor da alternativa (chat.html).
+ * Chave = name do grupo de radio; valor = atributo value do input.
+ */
+var CHAT_AUTO_REPLIES = {
+  pergunta_piso: {
+    fornecedor:
+      "Ótimo. Sugestão Obra360: abra Materiais, compare prazo e frete de 2 fornecedores e registre a decisão no chat com a equipe.",
+    manter:
+      "Entendido. Sugestão Obra360: atualize o Cronograma (+2 a +4 dias na etapa de revestimento) e avise o cliente sobre a nova data prevista.",
+    pausar:
+      "Combinado. Sugestão Obra360: redirecione a equipe para elétrica/acabamento leve enquanto o piso não chega, evitando ociosidade."
+  },
+  pergunta_prioridade: {
+    eletrica:
+      "Prioridade aceita. Resposta automática: amanhã foco em quadro, testes e pontos — isso destrava iluminação e segurança antes do piso.",
+    base:
+      "Prioridade aceita. Resposta automática: preparar contrapiso/nivelamento hoje acelera o assentamento quando o material chegar.",
+    limpeza:
+      "Prioridade aceita. Resposta automática: canteiro organizado reduz perda de material e retrabalho; combine 2h de limpeza + checklist."
+  },
+  pergunta_custo: {
+    dashboard:
+      "Resposta automática: use o Dashboard para comparar planejado vs atual semanalmente; qualquer desvio acima de 5% merece ajuste de escopo.",
+    alertas:
+      "Resposta automática: alertas de materiais e prazo reduzem imprevisto — confira a seção de alertas inteligentes no Dashboard.",
+    reuniao:
+      "Resposta automática: reunião semanal de 30 min com arquiteto alinha decisões e evita mudanças caras em cima da hora."
+  }
+};
+
+function scrollChatListToEnd() {
   var list = $("#chatList");
-  var who = $("#chatWho");
+  if (!list) return;
+  list.scrollTop = list.scrollHeight;
+}
 
-  if (!form || !input || !list || !who) return;
+function appendChatBubble(list, opts) {
+  var title = opts.title;
+  var text = opts.text;
+  var isMe = opts.isMe;
+  var meta = opts.meta || new Date().toLocaleString();
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
+  var bubble = document.createElement("div");
+  bubble.className = "bubble" + (isMe ? " bubble--me" : "");
 
-    var text = (input.value || "").trim();
-    if (!text) return;
+  var strong = document.createElement("strong");
+  strong.textContent = title;
 
-    var sender = who.value;
+  var msg = document.createElement("div");
+  msg.style.marginTop = "6px";
+  msg.textContent = text;
 
-    var bubble = document.createElement("div");
-    bubble.className = "bubble " + (sender === "cliente" ? "bubble--me" : "");
+  var metaEl = document.createElement("div");
+  metaEl.className = "bubble__meta";
+  metaEl.textContent = meta;
 
-    var strong = document.createElement("strong");
-    strong.textContent =
-      sender === "cliente"
-        ? "Você (Cliente)"
-        : sender === "arquiteto"
-        ? "Arquiteto"
-        : "Equipe";
+  bubble.appendChild(strong);
+  bubble.appendChild(msg);
+  bubble.appendChild(metaEl);
+  list.appendChild(bubble);
+}
 
-    var msg = document.createElement("div");
-    msg.style.marginTop = "6px";
-    msg.textContent = text;
+function initChatQna() {
+  // Em chat.html: ao marcar uma alternativa (radio), exibe resposta automática
+  var list = $("#chatList");
+  if (!list) return;
 
-    var meta = document.createElement("div");
-    meta.className = "bubble__meta";
-    meta.textContent = new Date().toLocaleString();
+  $all("[data-qna]").forEach(function (block) {
+    var fieldset = $(".qna__fieldset", block);
+    var repliesBox = $(".qna__replies", block);
+    if (!fieldset || !repliesBox) return;
 
-    bubble.appendChild(strong);
-    bubble.appendChild(msg);
-    bubble.appendChild(meta);
-    list.appendChild(bubble);
+    $all('input[type="radio"]', fieldset).forEach(function (radio) {
+      radio.addEventListener("change", function () {
+        if (fieldset.getAttribute("data-answered") === "1") return;
+        fieldset.setAttribute("data-answered", "1");
 
-    input.value = "";
-    input.focus();
+        var name = radio.name;
+        var value = radio.value;
+        var table = CHAT_AUTO_REPLIES[name];
+        var autoText = table && table[value] ? table[value] : "Resposta automática: obrigado pelo retorno. Registre a decisão com arquiteto e equipe.";
 
-    // Rola para a última mensagem
-    list.scrollTop = list.scrollHeight;
+        // Texto da alternativa escolhida (label)
+        var label = radio.closest("label");
+        var choiceText = label ? (label.querySelector("span") && label.querySelector("span").textContent.trim()) : value;
+
+        fieldset.disabled = true;
+        fieldset.classList.add("qna__fieldset--done");
+
+        repliesBox.hidden = false;
+        repliesBox.innerHTML = "";
+
+        appendChatBubble(repliesBox, {
+          title: "Você (escolha)",
+          text: choiceText,
+          isMe: true,
+          meta: "Resposta imediata"
+        });
+
+        appendChatBubble(repliesBox, {
+          title: "Obra360 (resposta automática)",
+          text: autoText,
+          isMe: false,
+          meta: "Gerado ao selecionar a alternativa"
+        });
+
+        scrollChatListToEnd();
+      });
+    });
   });
 }
 
@@ -119,6 +183,6 @@ document.addEventListener("DOMContentLoaded", function () {
   initNavActiveLink();
   initProgressBars();
   initMaterialsBuyButtons();
-  initChat();
+  initChatQna();
 });
 
