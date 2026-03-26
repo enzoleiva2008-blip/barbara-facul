@@ -554,3 +554,118 @@ body {
 .card:nth-child(4) { animation-delay: 0.2s; }
 .card:nth-child(5) { animation-delay: 0.25s; }
 
+/* --- Calendar --- */
+.calendar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.calendar__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.calendar__month {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--slate-900);
+}
+
+.calendar__grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+
+.calendar__day-name {
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--slate-500);
+  text-transform: uppercase;
+  padding-bottom: 8px;
+}
+
+.calendar__day {
+  aspect-ratio: 1;
+  background: white;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--slate-200);
+  padding: 8px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.2s ease;
+}
+
+.calendar__day--today {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px var(--primary-light);
+}
+
+.calendar__day--other {
+  background: var(--slate-50);
+  color: var(--slate-400);
+}
+
+.calendar__number {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.calendar__events {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.calendar__event {
+  height: 6px;
+  border-radius: 3px;
+  width: 100%;
+}
+
+.calendar__event--demolicao { background-color: var(--emerald-500); }
+.calendar__event--eletrica { background-color: var(--emerald-400); }
+.calendar__event--revestimento { background-color: var(--warn); }
+.calendar__event--acabamento { background-color: var(--slate-300); }
+
+.calendar__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--slate-700);
+}
+
+.legend-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+}
+
+.calendar__day-event {
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--slate-600);
+  background: var(--slate-100);
+  padding: 2px 4px;
+  border-radius: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 2px;
+  border-left: 2px solid var(--primary);
+}
+

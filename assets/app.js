@@ -179,10 +179,28 @@ function initChatQna() {
   });
 }
 
+function initSelectAllCheckboxes() {
+  // Busca por checkboxes com o atributo data-select-all
+  $all("[data-select-all]").forEach(function (master) {
+    master.addEventListener("change", function () {
+      // Encontra o card pai para limitar o efeito apenas a esta etapa
+      var card = master.closest(".card");
+      if (!card) return;
+
+      // Seleciona todos os checkboxes dentro da lista desta etapa
+      var checkboxes = $all('.checklist input[type="checkbox"]', card);
+      checkboxes.forEach(function (cb) {
+        cb.checked = master.checked;
+      });
+    });
+  });
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   initNavActiveLink();
   initProgressBars();
   initMaterialsBuyButtons();
   initChatQna();
+  initSelectAllCheckboxes();
 });
 

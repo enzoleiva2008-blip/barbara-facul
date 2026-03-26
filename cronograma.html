@@ -40,53 +40,207 @@
 
           <div class="divider"></div>
 
-          <div class="list">
-            <article class="card" style="padding: 12px">
-              <div class="row">
-                <strong>Demolição</strong>
-                <span class="pill pill--ok">Finalizado</span>
+          <div class="calendar">
+            <div class="calendar__header">
+              <h3 class="calendar__month">Março 2026</h3>
+              <div class="row" style="gap: 8px">
+                <button class="btn btn--secondary" style="padding: 8px" title="Mês anterior">◀</button>
+                <button class="btn btn--secondary" style="padding: 8px" title="Próximo mês">▶</button>
               </div>
-              <p class="card__meta" style="margin: 8px 0 0">01/03 → 05/03</p>
-              <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="margin-top: 10px">
-                <div class="progress__bar" data-percent="100"></div>
-              </div>
-            </article>
+            </div>
 
-            <article class="card" style="padding: 12px">
-              <div class="row">
-                <strong>Elétrica</strong>
-                <span class="pill pill--ok">Em andamento</span>
-              </div>
-              <p class="card__meta" style="margin: 8px 0 0">06/03 → 18/03</p>
-              <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="margin-top: 10px">
-                <div class="progress__bar" data-percent="80"></div>
-              </div>
-            </article>
+            <div class="calendar__grid">
+              <!-- Dias da Semana -->
+              <div class="calendar__day-name">Dom</div>
+              <div class="calendar__day-name">Seg</div>
+              <div class="calendar__day-name">Ter</div>
+              <div class="calendar__day-name">Qua</div>
+              <div class="calendar__day-name">Qui</div>
+              <div class="calendar__day-name">Sex</div>
+              <div class="calendar__day-name">Sáb</div>
 
-            <article class="card" style="padding: 12px">
-              <div class="row">
-                <strong>Revestimento</strong>
-                <span class="pill pill--warn">Risco de atraso</span>
+              <!-- Março começa em um Domingo (dia 1) em 2026 -->
+              <!-- Semana 1 -->
+              <div class="calendar__day">
+                <span class="calendar__number">1</span>
+                <div class="calendar__day-event">🧱 Início</div>
+                <div class="calendar__events"><div class="calendar__event calendar__event--demolicao" title="Demolição"></div></div>
               </div>
-              <p class="card__meta" style="margin: 8px 0 0">19/03 → 04/04</p>
-              <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="margin-top: 10px">
-                <div class="progress__bar" data-percent="60"></div>
+              <div class="calendar__day">
+                <span class="calendar__number">2</span>
+                <div class="calendar__events"><div class="calendar__event calendar__event--demolicao" title="Demolição"></div></div>
               </div>
-              <p class="card__meta" style="margin: 10px 0 0">
-                🔔 Alerta: entrega do piso pode atrasar. Sugestão: ver Materiais e trocar fornecedor.
-              </p>
-            </article>
+              <div class="calendar__day">
+                <span class="calendar__number">3</span>
+                <div class="calendar__events"><div class="calendar__event calendar__event--demolicao" title="Demolição"></div></div>
+              </div>
+              <div class="calendar__day">
+                <span class="calendar__number">4</span>
+                <div class="calendar__events"><div class="calendar__event calendar__event--demolicao" title="Demolição"></div></div>
+              </div>
+              <div class="calendar__day">
+                <span class="calendar__number">5</span>
+                <div class="calendar__day-event">✅ Concluído</div>
+                <div class="calendar__events"><div class="calendar__event calendar__event--demolicao" title="Demolição"></div></div>
+              </div>
+              <div class="calendar__day">
+                <span class="calendar__number">6</span>
+                <div class="calendar__day-event">💡 Elétrica</div>
+                <div class="calendar__events"><div class="calendar__event calendar__event--eletrica" title="Elétrica"></div></div>
+              </div>
+              <div class="calendar__day">
+                <span class="calendar__number">7</span>
+                <div class="calendar__events"><div class="calendar__event calendar__event--eletrica" title="Elétrica"></div></div>
+              </div>
 
-            <article class="card" style="padding: 12px">
-              <div class="row">
-                <strong>Acabamento</strong>
-                <span class="pill">A iniciar</span>
+              <!-- Semana 2 -->
+              <div class="calendar__day">
+                <span class="calendar__number">8</span>
+                <div class="calendar__events"><div class="calendar__event calendar__event--eletrica" title="Elétrica"></div></div>
               </div>
-              <p class="card__meta" style="margin: 8px 0 0">05/04 → 12/04</p>
-              <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="margin-top: 10px">
-                <div class="progress__bar" data-percent="20"></div>
+              <div class="calendar__day">
+                <span class="calendar__number">9</span>
+                <div class="calendar__events"><div class="calendar__event calendar__event--eletrica" title="Elétrica"></div></div>
               </div>
-            </article>
+              <div class="calendar__day">
+                <span class="calendar__number">10</span>
+                <div class="calendar__day-event">🔌 Conduítes</div>
+                <div class="calendar__events"><div class="calendar__event calendar__event--eletrica" title="Elétrica"></div></div>
+              </div>
+              <div class="calendar__day">
+                <span class="calendar__number">11</span>
+                <div class="calendar__events"><div class="calendar__event calendar__event--eletrica" title="Elétrica"></div></div>
+              </div>
+              <div class="calendar__day">
+                <span class="calendar__number">12</span>
+                <div class="calendar__events"><div class="calendar__event calendar__event--eletrica" title="Elétrica"></div></div>
+              </div>
+              <div class="calendar__day">
+                <span class="calendar__number">13</span>
+                <div class="calendar__events"><div class="calendar__event calendar__event--eletrica" title="Elétrica"></div></div>
+              </div>
+              <div class="calendar__day">
+                <span class="calendar__number">14</span>
+                <div class="calendar__events"><div class="calendar__event calendar__event--eletrica" title="Elétrica"></div></div>
+              </div>
+
+              <!-- Semana 3 -->
+              <div class="calendar__day">
+                <span class="calendar__number">15</span>
+                <div class="calendar__day-event">👷 Arquiteto</div>
+                <div class="calendar__events"><div class="calendar__event calendar__event--eletrica" title="Elétrica"></div></div>
+              </div>
+              <div class="calendar__day">
+                <span class="calendar__number">16</span>
+                <div class="calendar__events"><div class="calendar__event calendar__event--eletrica" title="Elétrica"></div></div>
+              </div>
+              <div class="calendar__day">
+                <span class="calendar__number">17</span>
+                <div class="calendar__events"><div class="calendar__event calendar__event--eletrica" title="Elétrica"></div></div>
+              </div>
+              <div class="calendar__day">
+                <span class="calendar__number">18</span>
+                <div class="calendar__day-event">⚡ Testes</div>
+                <div class="calendar__events"><div class="calendar__event calendar__event--eletrica" title="Elétrica"></div></div>
+              </div>
+              <div class="calendar__day">
+                <span class="calendar__number">19</span>
+                <div class="calendar__day-event">🧱 Revestimento</div>
+                <div class="calendar__events"><div class="calendar__event calendar__event--revestimento" title="Revestimento"></div></div>
+              </div>
+              <div class="calendar__day">
+                <span class="calendar__number">20</span>
+                <div class="calendar__day-event">📐 Medição</div>
+                <div class="calendar__events"><div class="calendar__event calendar__event--revestimento" title="Revestimento"></div></div>
+              </div>
+              <div class="calendar__day">
+                <span class="calendar__number">21</span>
+                <div class="calendar__events"><div class="calendar__event calendar__event--revestimento" title="Revestimento"></div></div>
+              </div>
+
+              <!-- Semana 4 -->
+              <div class="calendar__day">
+                <span class="calendar__number">22</span>
+                <div class="calendar__events"><div class="calendar__event calendar__event--revestimento" title="Revestimento"></div></div>
+              </div>
+              <div class="calendar__day">
+                <span class="calendar__number">23</span>
+                <div class="calendar__day-event">🏗️ Início Piso</div>
+                <div class="calendar__events"><div class="calendar__event calendar__event--revestimento" title="Revestimento"></div></div>
+              </div>
+              <div class="calendar__day">
+                <span class="calendar__number">24</span>
+                <div class="calendar__events"><div class="calendar__event calendar__event--revestimento" title="Revestimento"></div></div>
+              </div>
+              <div class="calendar__day">
+                <span class="calendar__number">25</span>
+                <div class="calendar__events"><div class="calendar__event calendar__event--revestimento" title="Revestimento"></div></div>
+              </div>
+              <div class="calendar__day calendar__day--today">
+                <span class="calendar__number">26</span>
+                <div class="calendar__day-event">🏗️ Assentamento</div>
+                <div class="calendar__events"><div class="calendar__event calendar__event--revestimento" title="Revestimento"></div></div>
+              </div>
+              <div class="calendar__day">
+                <span class="calendar__number">27</span>
+                <div class="calendar__events"><div class="calendar__event calendar__event--revestimento" title="Revestimento"></div></div>
+              </div>
+              <div class="calendar__day">
+                <span class="calendar__number">28</span>
+                <div class="calendar__day-event">🧱 Piso</div>
+                <div class="calendar__events"><div class="calendar__event calendar__event--revestimento" title="Revestimento"></div></div>
+              </div>
+
+              <!-- Semana 5 -->
+              <div class="calendar__day">
+                <span class="calendar__number">29</span>
+                <div class="calendar__events"><div class="calendar__event calendar__event--revestimento" title="Revestimento"></div></div>
+              </div>
+              <div class="calendar__day">
+                <span class="calendar__number">30</span>
+                <div class="calendar__events"><div class="calendar__event calendar__event--revestimento" title="Revestimento"></div></div>
+              </div>
+              <div class="calendar__day">
+                <span class="calendar__number">31</span>
+                <div class="calendar__day-event">🧼 Rejunte</div>
+                <div class="calendar__events"><div class="calendar__event calendar__event--revestimento" title="Revestimento"></div></div>
+              </div>
+              <div class="calendar__day calendar__day--other">
+                <span class="calendar__number">1</span>
+                <div class="calendar__events"><div class="calendar__event calendar__event--revestimento" title="Revestimento"></div></div>
+              </div>
+              <div class="calendar__day calendar__day--other">
+                <span class="calendar__number">2</span>
+                <div class="calendar__events"><div class="calendar__event calendar__event--revestimento" title="Revestimento"></div></div>
+              </div>
+              <div class="calendar__day calendar__day--other">
+                <span class="calendar__number">3</span>
+                <div class="calendar__events"><div class="calendar__event calendar__event--revestimento" title="Revestimento"></div></div>
+              </div>
+              <div class="calendar__day calendar__day--other">
+                <span class="calendar__number">4</span>
+                <div class="calendar__events"><div class="calendar__event calendar__event--revestimento" title="Revestimento"></div></div>
+              </div>
+            </div>
+
+            <div class="calendar__legend">
+              <div class="legend-item">
+                <div class="legend-color calendar__event--demolicao"></div>
+                <span>Demolição</span>
+              </div>
+              <div class="legend-item">
+                <div class="legend-color calendar__event--eletrica"></div>
+                <span>Elétrica</span>
+              </div>
+              <div class="legend-item">
+                <div class="legend-color calendar__event--revestimento"></div>
+                <span>Revestimento</span>
+              </div>
+              <div class="legend-item">
+                <div class="legend-color calendar__event--acabamento"></div>
+                <span>Acabamento</span>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -101,6 +255,7 @@
         <a href="index.html"><span class="icon" aria-hidden="true">📊</span><span>Dashboard</span></a>
         <a href="obra.html"><span class="icon" aria-hidden="true">🏗️</span><span>Obra</span></a>
         <a href="cronograma.html"><span class="icon" aria-hidden="true">📅</span><span>Cronograma</span></a>
+        <a href="fotos.html"><span class="icon" aria-hidden="true">📸</span><span>Fotos</span></a>
         <a href="profissionais.html"><span class="icon" aria-hidden="true">👷</span><span>Profissionais</span></a>
         <a href="materiais.html"><span class="icon" aria-hidden="true">🧱</span><span>Materiais</span></a>
         <a href="chat.html"><span class="icon" aria-hidden="true">💬</span><span>Chat</span></a>

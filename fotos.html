@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Obra360 — Fotos da Obra</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="header__row">
+        <div class="brand">
+          <div class="brand__logo" aria-hidden="true">📸</div>
+          <div>
+            <h1 class="brand__title">Obra360</h1>
+            <p class="brand__subtitle">Acompanhamento visual do seu imóvel</p>
+          </div>
+        </div>
+        <div class="chip">Total: <strong>4 fotos</strong></div>
+      </div>
+    </header>
+
+    <main class="app">
+      <p class="section-title">Galeria de Fotos</p>
+
+      <div class="grid">
+        <section class="card col-6" aria-label="Foto: Sala">
+          <img src="assets/fotos/piso.png" alt="Instalação do piso na sala" style="width: 100%; border-radius: var(--radius-md); aspect-ratio: 16/9; object-fit: cover; margin-bottom: 12px;">
+          <div class="row">
+            <strong>🏠 Sala de Estar</strong>
+            <span class="pill pill--ok">Piso</span>
+          </div>
+          <p class="card__meta">Instalação de porcelanato de grande formato.</p>
+          <div class="bubble__meta">Atualizado em: 26/03/2026</div>
+        </section>
+
+        <section class="card col-6" aria-label="Foto: Cozinha">
+          <img src="assets/fotos/cozinha.png" alt="Reforma da cozinha" style="width: 100%; border-radius: var(--radius-md); aspect-ratio: 16/9; object-fit: cover; margin-bottom: 12px;">
+          <div class="row">
+            <strong>🍳 Cozinha</strong>
+            <span class="pill pill--ok">Marmoraria</span>
+          </div>
+          <p class="card__meta">Finalização da bancada e marcenaria.</p>
+          <div class="bubble__meta">Atualizado em: 25/03/2026</div>
+        </section>
+
+        <section class="card col-6" aria-label="Foto: Banheiro">
+          <img src="assets/fotos/banheiro.png" alt="Reforma do banheiro" style="width: 100%; border-radius: var(--radius-md); aspect-ratio: 16/9; object-fit: cover; margin-bottom: 12px;">
+          <div class="row">
+            <strong>🚿 Banheiro</strong>
+            <span class="pill pill--warn">Revestimento</span>
+          </div>
+          <p class="card__meta">Aplicação de revestimento em tons de cinza.</p>
+          <div class="bubble__meta">Atualizado em: 24/03/2026</div>
+        </section>
+
+        <section class="card col-6" aria-label="Foto: Quarto">
+          <img src="assets/fotos/pintura.png" alt="Pintura do quarto" style="width: 100%; border-radius: var(--radius-md); aspect-ratio: 16/9; object-fit: cover; margin-bottom: 12px;">
+          <div class="row">
+            <strong>🛏️ Quarto Casal</strong>
+            <span class="pill">Pintura</span>
+          </div>
+          <p class="card__meta">Preparação e pintura das paredes.</p>
+          <div class="bubble__meta">Atualizado em: 23/03/2026</div>
+        </section>
+
+        <footer class="footer col-12">
+          "A gente não está só reformando casas. A gente está transformando obra em produto."
+        </footer>
+      </div>
+    </main>
+
+    <nav class="nav" aria-label="Menu de navegação">
+      <div class="nav__inner">
+        <a href="index.html"><span class="icon" aria-hidden="true">📊</span><span>Dashboard</span></a>
+        <a href="obra.html"><span class="icon" aria-hidden="true">🏗️</span><span>Obra</span></a>
+        <a href="cronograma.html"><span class="icon" aria-hidden="true">📅</span><span>Cronograma</span></a>
+        <a href="fotos.html"><span class="icon" aria-hidden="true">📸</span><span>Fotos</span></a>
+        <a href="profissionais.html"><span class="icon" aria-hidden="true">👷</span><span>Profissionais</span></a>
+        <a href="materiais.html"><span class="icon" aria-hidden="true">🧱</span><span>Materiais</span></a>
+        <a href="chat.html"><span class="icon" aria-hidden="true">💬</span><span>Chat</span></a>
+      </div>
+    </nav>
+
+    <script src="assets/app.js"></script>
+  </body>
+</html>
